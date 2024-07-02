@@ -24,53 +24,72 @@
     }
 
     .text-wrapper {
-      display: flex;
-      justify-content: flex-start;
-      background-color: aliceblue;
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      z-index: 999;
-      width: 100%;
+      display: none; /* Hide on larger screens */
     }
 
-    h2 {
-      font-family: "Abel", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 30px;
-      white-space: nowrap;
-      padding: 0 2rem;
-      letter-spacing: 20px;
-      animation: move-rtl 6s linear infinite;
-      
-    }
-
-    @keyframes move-rtl {
-      0% {
-        transform: translateX(0);
+    @media (max-width: 767px) {
+      .text-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        background-color: aliceblue;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        width: 100%;
+        padding: 10px 0;
       }
 
-      100% {
-        transform: translateX(-100%);
+      h2 {
+        font-family: "Abel", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        white-space: nowrap;
+        padding: 0 1rem;
+        letter-spacing: 10px;
+        animation: move-rtl 6s linear infinite;
       }
-    }
 
-    .container {
-      padding-top: 100px;
-      text-align: center;
-      
-    }
+      @keyframes move-rtl {
+        0% {
+          transform: translateX(0);
+        }
 
-    .custom-card-margin {
-      margin-bottom: 20px;
-      
-    }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
 
-    .card-img-top {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+      .container {
+        padding-top: 100px;
+        text-align: center;
+      }
+
+      .custom-card-margin {
+        margin-bottom: 20px;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .order-summary {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        z-index: 1000;
+      }
     }
   </style>
 </head>
@@ -86,75 +105,77 @@
   <h1>Wardy's Store</h1>
   <div class="container">
     <div class="row gy-4">
-      <div class="col-md-4 custom-card-margin">
-        <div class="card h-100">
-          <img src="c1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <label id="product1">Chuck 70</label><br>
-            <label id="price1">4490.00</label><br>
-            <input type="number" class="form-control" id="qty1" placeholder="Enter Quantity">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6 custom-card-margin">
+            <div class="card h-100">
+              <img src="c1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <label id="product1">Chuck 70</label><br>
+                <label id="price1">4490.00</label><br>
+                <input type="number" class="form-control" id="qty1" placeholder="Enter Quantity">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 custom-card-margin">
+            <div class="card h-100">
+              <img src="c2.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <label id="product2">Chuck Taylor All Star CX EXP2</label><br>
+                <label id="price2">3592.00</label><br>
+                <input type="number" class="form-control" id="qty2" placeholder="Enter Quantity">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 custom-card-margin">
+            <div class="card h-100">
+              <img src="c3.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <label id="product3">Chuck 70 Black & White</label><br>
+                <label id="price3">3592.00</label><br>
+                <input type="number" class="form-control" id="qty3" placeholder="Enter Quantity">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 custom-card-margin">
+            <div class="card h-100">
+              <img src="c4.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <label id="product4">Chuck 70</label><br>
+                <label id="price4">3353.00</label><br>
+                <input type="number" class="form-control" id="qty4" placeholder="Enter Quantity">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 custom-card-margin">
+            <div class="card h-100">
+              <img src="c5.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <label id="product5">Chuck Taylor All Star Cruise</label><br>
+                <label id="price5">4490.00</label><br>
+                <input type="number" class="form-control" id="qty5" placeholder="Enter Quantity">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 custom-card-margin">
+            <div class="card h-100">
+              <img src="c6.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <label id="product6">Chuck 70 Plus</label><br>
+                <label id="price6">4790.00</label><br>
+                <input type="number" class="form-control" id="qty6" placeholder="Enter Quantity">
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 custom-card-margin">
-        <div class="card h-100">
-          <img src="c2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <label id="product2">Chuck Taylor All Star CX EXP2</label><br>
-            <label id="price2">3592.00</label><br>
-            <input type="number" class="form-control" id="qty2" placeholder="Enter Quantity">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 custom-card-margin">
-        <div class="card h-100">
-          <img src="c3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <label id="product3">Chuck 70 Black & White</label><br>
-            <label id="price3">3592.00</label><br>
-            <input type="number" class="form-control" id="qty3" placeholder="Enter Quantity">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 custom-card-margin">
-        <div class="card h-100">
-          <img src="c4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <label id="product4">Chuck 70</label><br>
-            <label id="price4">3353.00</label><br>
-            <input type="number" class="form-control" id="qty4" placeholder="Enter Quantity">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 custom-card-margin">
-        <div class="card h-100">
-          <img src="c5.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <label id="product5">Chuck Taylor All Star Cruise</label><br>
-            <label id="price5">4490.00</label><br>
-            <input type="number" class="form-control" id="qty5" placeholder="Enter Quantity">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 custom-card-margin">
-        <div class="card h-100">
-          <img src="c6.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <label id="product6">Chuck 70 Plus</label><br>
-            <label id="price6">4790.00</label><br>
-            <input type="number" class="form-control" id="qty6" placeholder="Enter Quantity">
-          </div>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <label for="carts">Order</label><br>
-            <textarea class="form-control" rows="15" id="carts" cols="200" readonly></textarea>
-            <input type="text" class="form-control border-0" id="total" readonly placeholder="Total">
-            <input type="number" class="form-control" id="cash" placeholder="Cash Tendered">
-            <input type="text" class="form-control border-0" id="change" readonly placeholder="Change">
-          </div>
+      <div class="col-md-4">
+        <div class="order-summary">
+          <label for="carts">Order</label><br>
+          <textarea class="form-control" rows="15" id="carts" cols="200" readonly></textarea>
+          <input type="text" class="form-control border-0" id="total" readonly placeholder="Total">
+          <input type="number" class="form-control" id="cash" placeholder="Cash Tendered">
+          <input type="text" class="form-control border-0" id="change" readonly placeholder="Change">
         </div>
       </div>
     </div>
