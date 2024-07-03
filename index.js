@@ -63,6 +63,7 @@ function addOrder(){
     }
 
     total.value = '₱ ' + totalPrice.toFixed(2);
+    calculateChange();
 }
 
 function calculateChange() {
