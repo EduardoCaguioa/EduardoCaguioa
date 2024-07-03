@@ -61,7 +61,6 @@ function addOrder(){
         carts.textContent += order;
         totalPrice += parseFloat(qty6.value) * parseFloat(price6.textContent);
     }
-
     total.value = '₱ ' + totalPrice.toFixed(2);
     calculateChange();
 }
