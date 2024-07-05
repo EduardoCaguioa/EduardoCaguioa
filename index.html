@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Euardo's Shoes Shop</title>
+  <title>Eduardo's Shoes Shop</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abel&family=Allura&family=Anta&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&display=swap" rel="stylesheet">
@@ -14,7 +14,8 @@
       text-align: center;
       padding-top: 0;
       letter-spacing: 20px;
-      background-color: beige;
+      background-color: rgb(0, 0, 0);
+      color: white;
       position: fixed;
       top: 40px;
       z-index: 1000;
@@ -24,15 +25,22 @@
     .text-wrapper {
       display: flex;
       justify-content: flex-start;
-      background-color: aliceblue;
+      background-color: rgb(255, 255, 255);
       overflow: hidden;
       position: fixed;
       top: 0;
       z-index: 999;
       width: 100%;
+      height: 50px;
     }
 
-    h2 {
+    .marquee {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 60s linear infinite;
+    }
+
+    .marquee h2 {
       font-family: "Abel", sans-serif;
       font-weight: 400;
       font-style: normal;
@@ -40,29 +48,33 @@
       white-space: nowrap;
       padding: 0 2rem;
       letter-spacing: 20px;
-      animation: move-rtl 6s linear infinite;
-      
     }
 
-    @keyframes move-rtl {
+    @keyframes marquee {
       0% {
         transform: translateX(0);
       }
-
       100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
       }
     }
 
     .container {
       padding-top: 100px;
       text-align: center;
-      
     }
 
     .custom-card-margin {
       margin-bottom: 20px;
-      
+    }
+
+    .card {
+      border: 4px solid rgb(0, 0, 0);
+      background-color: transparent;
+    }
+
+    .card-body {
+      padding: 15px;
     }
 
     .card-img-top {
@@ -70,23 +82,82 @@
       height: 200px;
       object-fit: cover;
     }
+
+    .form-control {
+      border: 4px solid rgb(0, 0, 0);
+      background-color: transparent;
+
+      margin-top: 10px;
+    }
+
+    textarea.form-control {
+      margin-top: 10px;
+      border: 4px solid rgb(0, 0, 0);
+      background-color: transparent;
+
+    }
+
+    input.form-control.border-0 {
+      margin-top: 10px;
+      border: 4px solid rgb(0, 0, 0);
+      background-color: transparent;
+
+    }
+
+    #carts {
+      border: 4px solid rgb(0, 0, 0);
+      background-color: transparent;
+      margin-top: 10px;
+      width: 100%;
+      resize: none;
+    }
+    .card-body label {
+      color: white;
+      font-weight: bolder;
+    }
+    .card-body label[for="carts"],
+    .card-body input[type="text"] {
+      color: white;
+      font-weight: bolder;
+    }
+    .card-body input[type="number"] {
+      color: rgb(255, 255, 255);
+    }
+    #carts {
+      color: white;
+    }
+    #cash{
+      color: black;
+    }
+    #change {
+      color: white;
+    }
   </style>
 </head>
-<body>
+<body style="background-color: gray;">
   <div class="text-wrapper">
-    <h2>CONVERSE</h2>
-    <h2>CONVERSE</h2>
-    <h2>CONVERSE</h2>
-    <h2>CONVERSE</h2>
-    <h2>CONVERSE</h2>
-    <h2>CONVERSE</h2>
+    <div class="marquee">
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <!-- Duplicate the items to achieve continuous looping -->
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+      <h2>CONVERSE</h2>
+    </div>
   </div>
-  <h1>Wardy's Shoe Store</h1>
+  <h1>Eduardo's Shoe Store</h1>
   <div class="container">
     <div class="row gy-4">
       <div class="col-md-4 custom-card-margin">
         <div class="card h-100">
-          <img src="c1.jpg" class="card-img-top" alt="...">
+          <img src="c1.png" class="card-img-top" alt="...">
           <div class="card-body">
             <label id="product1">Chuck 70</label><br>
             <label id="price1">4490.00</label><br>
@@ -96,7 +167,7 @@
       </div>
       <div class="col-md-4 custom-card-margin">
         <div class="card h-100">
-          <img src="c2.jpg" class="card-img-top" alt="...">
+          <img src="c2.png" class="card-img-top" alt="...">
           <div class="card-body">
             <label id="product2">Chuck Taylor All Star CX EXP2</label><br>
             <label id="price2">3592.00</label><br>
@@ -106,7 +177,7 @@
       </div>
       <div class="col-md-4 custom-card-margin">
         <div class="card h-100">
-          <img src="c3.jpg" class="card-img-top" alt="...">
+          <img src="c3.png" class="card-img-top" alt="...">
           <div class="card-body">
             <label id="product3">Chuck 70 Black & White</label><br>
             <label id="price3">3592.00</label><br>
@@ -116,7 +187,7 @@
       </div>
       <div class="col-md-4 custom-card-margin">
         <div class="card h-100">
-          <img src="c4.jpg" class="card-img-top" alt="...">
+          <img src="c4.png" class="card-img-top" alt="...">
           <div class="card-body">
             <label id="product4">Chuck 70</label><br>
             <label id="price4">3353.00</label><br>
@@ -126,7 +197,7 @@
       </div>
       <div class="col-md-4 custom-card-margin">
         <div class="card h-100">
-          <img src="c5.jpg" class="card-img-top" alt="...">
+          <img src="c5.png" class="card-img-top" alt="...">
           <div class="card-body">
             <label id="product5">Chuck Taylor All Star Cruise</label><br>
             <label id="price5">4490.00</label><br>
@@ -136,7 +207,7 @@
       </div>
       <div class="col-md-4 custom-card-margin">
         <div class="card h-100">
-          <img src="c6.jpg" class="card-img-top" alt="...">
+          <img src="c6.png" class="card-img-top" alt="...">
           <div class="card-body">
             <label id="product6">Chuck 70 Plus</label><br>
             <label id="price6">4790.00</label><br>
